@@ -1,3 +1,13 @@
+# Выполнено Занятие (DOCKER-3)
+## gekl_infra [![Build Status](https://travis-ci.com/Otus-DevOps-2019-08/gekl_microservices.svg?branch=docker-2)](https://travis-ci.com/Otus-DevOps-2019-08/gekl_microservices.svg?branch=docker-2)
+
+###Выполнено###
+Приложение запущено как микросервис в GCP
+*Изменены network-alias
+Улучшили образы изменением докер файла
+*Пересобрали с Alpine
+Подключили папку с базой, перезапустили контейнеры, все работает. УРА!
+
 
 # Выполнено Занятие (DOCKER-2)
 ## gekl_infra [![Build Status](https://travis-ci.com/Otus-DevOps-2019-08/gekl_microservices.svg?branch=docker-2)](https://travis-ci.com/Otus-DevOps-2019-08/gekl_microservices.svg?branch=docker-2)
