@@ -1,0 +1,11 @@
+REPOSITORY             TAG                 IMAGE ID            CREATED             SIZE
+gekl/ubuntu-tmp-file   latest              355c4e4519c0        40 seconds ago      127MB
+nginx                  latest              2073e0bcb60e        2 days ago          127MB
+ubuntu                 16.04               96da9143fb18        2 weeks ago         124MB
+hello-world            latest              fce289e99eb9        13 months ago       1.84kB
+
+
+Основное различие между образом и контейнером — в доступном для записи верхнем слое. Из вывода docker inspect 
+это можно увидеть так:
+В описании контенера присутствует параметр "ReadonlyRootfs": false
+docker-267214
