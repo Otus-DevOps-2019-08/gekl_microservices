@@ -1,6 +1,6 @@
 
 # Выполнено Занятие (DOCKER-2)
-## gekl_infra [![Build Status](https://travis-ci.com/otus-devops-2019-05/gekl_microservices.svg?branch=docker-2)](https://travis-ci.com/otus-devops-2019-05/gekl_microservices.svg?branch=master)
+## gekl_infra [![Build Status](https://travis-ci.com/Otus-DevOps-2019-08/gekl_microservices.svg?branch=docker-2)](https://travis-ci.com/Otus-DevOps-2019-08/gekl_microservices.svg?branch=docker-2)
 
 Примеры `docker run`
 ```
