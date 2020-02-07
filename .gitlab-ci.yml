@@ -8,8 +8,7 @@ variables:
 
 before_script:   
   - cd reddit
-  - apt update -y
-  - apt install ruby-dev -y 
+  - apk add --update ruby-dev build-base libxml2-dev libxslt-dev pcre-dev libffi-dev 
   - gem install bundler
   - bundle install
 
