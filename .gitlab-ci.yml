@@ -9,9 +9,9 @@ variables:
 before_script:   
   - cd reddit
   - apk add --update ruby-dev build-base libxml2-dev libxslt-dev pcre-dev libffi-dev 
-  - gem install bundler:1.16.1
-#  - gem install bundler
-#  - bundle update --bundler
+#  - gem install bundler:1.16.1
+  - gem install bundler
+  - bundle update --bundler
   - bundle install
 
 build_job:
