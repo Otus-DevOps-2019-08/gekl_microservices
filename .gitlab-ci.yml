@@ -41,7 +41,7 @@ deploy_dev_job:
     url: http://dev.example.com
 
 staiging:
-  stage: staiging
+  stage: stage
   when: manual
   only:
     - /^\d+\.\d+\.\d+/
