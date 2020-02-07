@@ -1,3 +1,99 @@
+# Выполнено Занятие (DOCKER-4)
+## gekl_infra [![Build Status](https://travis-ci.com/Otus-DevOps-2019-08/gekl_microservices.svg?branch=docker-4)](https://travis-ci.com/Otus-DevOps-2019-08/gekl_microservices.svg?branch=docker-4)
+
+Типы сетей в Docker:
+
+    none - только loobback, сеть изолирована
+    host - использует сеть хоста
+    bridge - отдельные namespaces сети ("виртуальная" сеть)
+    MacVlan - на основе сабинтерфейсов Linux, поддерка 802.1Q
+    Overlay - несколько Docker хостов в одну сеть, работает поверх VXLAN
+
+При запуске контейнера можно указать только одну сеть параметром --network=<name>. Для подключения дополнительных сетей к контейнерам применить команду: docker network connect. Также несколько сетей могут быть подключены к контейнеру при запуске, если используется docker-compose.
+
+# docker-compose.yml
+
+```
+version: '3.3'
+services:
+  post_db:
+    image: mongo:${MONGO_VERSION}
+    volumes:
+      - post_db:/data/db
+    networks:
+      - reddit
+  ui:
+    build: ./ui
+    image: ${USERNAME}/ui:${UI_VERSION}
+    ports:
+      - ${UI_PORT}:${REDDIT_PORT}/tcp
+    networks:
+      - ui
+  post:
+    build: ./post-py
+    image: ${USERNAME}/post:${POST_VERSION}
+    networks:
+      - reddit
+      - ui
+  comment:
+    build: ./comment
+    image: ${USERNAME}/comment:${COMMENT_VERSION}
+    networks:
+      - reddit
+      - ui
+volumes:
+  post_db:
+networks:
+  reddit:
+  ui:
+```
+
+Переменные заданы в .env
+
+```
+# .env
+
+COMPOSE_PROJECT_NAME=project
+MONGO_VERSION=3.2
+USERNAME=some_user
+UI_VERSION=1.0
+POST_VERSION=1.0
+COMMENT_VERSION=1.0
+UI_PORT=9292
+REDDIT_PORT=9292
+```
+
+## Задание со *
+`docker-compose.ovveride.yml` позволяет перезаписывать параметры `docker-compose.yml`. Для использования модифицированного кода приложений без пересборки образа можно использовать `volumes`. Для перезаписи команды запуска контейнера используется параметр `entrypoint`.
+```
+# docker-compose.ovveride.yml
+
+version: '3.3'
+services:
+  ui:
+    volumes:
+      - ui:/app
+    entrypoint: 
+      - puma
+      - --debug 
+      - -w 2
+  post:
+    volumes:
+      - post-py:/app
+  comment:
+    volumes:
+      - comment:/app
+    entrypoint: 
+      - puma
+      - --debug 
+      - -w 2
+
+volumes:
+  ui:
+  post-py:
+  comment:
+```
+
 # Выполнено Занятие (DOCKER-3)
 ## gekl_infra [![Build Status](https://travis-ci.com/Otus-DevOps-2019-08/gekl_microservices.svg?branch=docker-2)](https://travis-ci.com/Otus-DevOps-2019-08/gekl_microservices.svg?branch=docker-2)
 
