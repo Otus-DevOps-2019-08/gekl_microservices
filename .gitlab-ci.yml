@@ -8,6 +8,8 @@ variables:
 
 before_script:   
   - cd reddit
+  - apt update -y
+  - apt install ruby-dev -y 
   - gem install bundler
   - bundle install
 
