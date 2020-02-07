@@ -39,7 +39,7 @@ deploy_dev_job:
     url: http://dev.example.com
 
 staiging:
-  stage: stage
+  stage: staiging
   when: manual
   only:
     - /^\d+\.\d+\.\d+/
@@ -49,8 +49,8 @@ staiging:
     name: stage
     url: http://beta.example.com
 
-staiging:
-  stage: prod
+production:
+  stage: production
   when: manual
   only:
     - /^\d+\.\d+\.\d+/
