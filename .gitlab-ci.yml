@@ -1,3 +1,5 @@
+image: ruby:2.4.2
+
 stages:
   - build
   - test
@@ -8,11 +10,8 @@ stages:
 variables:
   DATABASE_URL: 'mongodb://mongo/user_posts'
 
-before_script:   
+before_script:
   - cd reddit
-  - apk add --update ruby-dev build-base libxml2-dev libxslt-dev pcre-dev libffi-dev 
-  - gem install bundler
-  - bundle update --bundler
   - bundle install
 
 build_job:
@@ -20,27 +19,30 @@ build_job:
   script:
     - echo 'Building'
 
-#test_unit_job:
-#  stage: test
-#  services:
-#    - mongo:latest
-#  script:
-##    - ruby simpletest.rb
+test_unit_job:
+  stage: test
+  services:
+    - mongo:latest
+  script:
+    - ruby simpletest.rb
 
 test_integration_job:
   stage: test
   script:
     - echo 'Testing 2'
 
-deploy_dev_job:
+branch review:
   stage: review
-  script:
-    - echo 'Deploy'
+  script: echo "Deploy to $CI_ENVIRONMENT_SLUG"
   environment:
-    name: dev
-    url: http://dev.example.com
+   name: branch/$CI_COMMIT_REF_NAME
+   url: http://$CI_ENVIRONMENT_SLUG.example.com
+  only:
+    - branches
+  except:
+    - master
 
-staiging:
+staging:
   stage: stage
   when: manual
   only:
@@ -59,5 +61,5 @@ production:
   script:
     - echo 'Deploy'
   environment:
-    name: prod
-    url: http://www.example.com
+    name: production
+    url: http://example.com
