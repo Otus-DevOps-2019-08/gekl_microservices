@@ -1,4 +1,9 @@
-image: docker:dind
+services:
+  - docker:18.09-dind
+
+image: docker:18.09
+
+#image: docker:dind
 
 stages:
   - build
