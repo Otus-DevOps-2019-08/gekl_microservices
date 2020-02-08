@@ -23,6 +23,7 @@ before_script:
 build_job:
   stage: build
   script:
+    - hostname
     - docker info
     - docker build -t $REPO_NAME/$APP_NAME:$CI_COMMIT_REF_NAME .
     - echo 'Building'
