@@ -1,9 +1,7 @@
 services:
-  - docker:18.09-dind
+  - docker:latest
 
-image: docker:18.09
-
-#image: docker:dind
+image: docker:latest
 
 stages:
   - build
@@ -25,7 +23,7 @@ before_script:
 build_job:
   stage: build
   script:
-    - echo "127.0.0.1 docker">>/etc/hosts
+#    - echo "127.0.0.1 docker">>/etc/hosts
     - docker info
     - docker build -t $REPO_NAME/$APP_NAME:$CI_COMMIT_REF_NAME .
     - echo 'Building'
