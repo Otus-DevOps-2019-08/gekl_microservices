@@ -1,3 +1,13 @@
+#Выполнено Занятие (DOCKER-4)
+## gekl_microservices [![Build Status](https://travis-ci.com/Otus-DevOps-2019-08/gekl_microservices.svg?branch=gitlab-ci-1)](https://travis-ci.com/Otus-DevOps-2019-08/gekl_microservices.svg?branch=gitlab-ci-1)
+
+Выполнены основнные пункты ДЗ
+
+Выполнен задание со *
+На основании описания в статье 
+https://docs.gitlab.com/ee/ci/docker/using_docker_build.html#use-docker-in-docker-executor
+Запутил gitlab-runner на docker-host, а он в свою очередь запустился контейнер с reddit.
+
 # Выполнено Занятие (DOCKER-4)
 ## gekl_microservices [![Build Status](https://travis-ci.com/Otus-DevOps-2019-08/gekl_microservices.svg?branch=docker-4)](https://travis-ci.com/Otus-DevOps-2019-08/gekl_microservices.svg?branch=docker-4)
 
