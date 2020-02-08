@@ -18,6 +18,7 @@ before_script:
 build_job:
   stage: build
   script:
+    - docker build -t $REPO_NAME/$APP_NAME:$CI_COMMIT_REF_NAME .
     - echo 'Building'
 
 test_unit_job:
