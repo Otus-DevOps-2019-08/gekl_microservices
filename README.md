@@ -1,5 +1,5 @@
 # Выполнено Занятие (DOCKER-4)
-## gekl_infra [![Build Status](https://travis-ci.com/Otus-DevOps-2019-08/gekl_microservices.svg?branch=docker-4)](https://travis-ci.com/Otus-DevOps-2019-08/gekl_microservices.svg?branch=docker-4)
+## gekl_microservices [![Build Status](https://travis-ci.com/Otus-DevOps-2019-08/gekl_microservices.svg?branch=docker-4)](https://travis-ci.com/Otus-DevOps-2019-08/gekl_microservices.svg?branch=docker-4)
 
 Типы сетей в Docker:
 
@@ -95,7 +95,7 @@ volumes:
 ```
 
 # Выполнено Занятие (DOCKER-3)
-## gekl_infra [![Build Status](https://travis-ci.com/Otus-DevOps-2019-08/gekl_microservices.svg?branch=docker-2)](https://travis-ci.com/Otus-DevOps-2019-08/gekl_microservices.svg?branch=docker-2)
+## gekl_microservices [![Build Status](https://travis-ci.com/Otus-DevOps-2019-08/gekl_microservices.svg?branch=docker-2)](https://travis-ci.com/Otus-DevOps-2019-08/gekl_microservices.svg?branch=docker-2)
 
 ###Выполнено###
 Приложение запущено как микросервис в GCP
@@ -106,7 +106,7 @@ volumes:
 
 
 # Выполнено Занятие (DOCKER-2)
-## gekl_infra [![Build Status](https://travis-ci.com/Otus-DevOps-2019-08/gekl_microservices.svg?branch=docker-2)](https://travis-ci.com/Otus-DevOps-2019-08/gekl_microservices.svg?branch=docker-2)
+## gekl_microservices [![Build Status](https://travis-ci.com/Otus-DevOps-2019-08/gekl_microservices.svg?branch=docker-2)](https://travis-ci.com/Otus-DevOps-2019-08/gekl_microservices.svg?branch=docker-2)
 
 Примеры `docker run`
 ```
