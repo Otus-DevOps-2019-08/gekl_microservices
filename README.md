@@ -1,3 +1,24 @@
+# Выполнено Занятие (monitoring-1)
+
+## gekl_microservices [![Build Status](https://travis-ci.com/Otus-DevOps-2019-08/gekl_microservices.svg?branch=monitoring-1)](https://travis-ci.com/Otus-DevOps-2019-08/gekl_microservices.svg?branch=monitoring-1)
+
+
+Выполнены основнные пункты ДЗ:
+
+Prometheus: запуск, конфигурация, знакомство с Web UI
+
+Мониторинг состояния микросервисов
+
+Сбор метрик хоста с использованием экспортера
+
+Задание со * №1
+  Использовал эспортер MongoDB от компании percona  
+Задание со * №2
+  https://hub.docker.com/r/prom/blackbox-exporter
+  
+Push контейнеры в docker hub https://hub.docker.com/u/gklepach/
+
+
 # Выполнено Занятие (gitlab-ci-1)
 
 ## gekl_microservices [![Build Status](https://travis-ci.com/Otus-DevOps-2019-08/gekl_microservices.svg?branch=gitlab-ci-1)](https://travis-ci.com/Otus-DevOps-2019-08/gekl_microservices.svg?branch=gitlab-ci-1)
@@ -11,7 +32,7 @@
 
 https://docs.gitlab.com/ee/ci/docker/using_docker_build.html#use-docker-in-docker-executor
 
-Запутил gitlab-runner на docker-host, а он в свою очередь запустился контейнер с reddit.
+Запустил gitlab-runner на docker-host, а он в свою очередь запустился контейнер с reddit.
 
 # Выполнено Занятие (DOCKER-4)
 ## gekl_microservices [![Build Status](https://travis-ci.com/Otus-DevOps-2019-08/gekl_microservices.svg?branch=docker-4)](https://travis-ci.com/Otus-DevOps-2019-08/gekl_microservices.svg?branch=docker-4)
