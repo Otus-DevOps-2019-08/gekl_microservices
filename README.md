@@ -1,3 +1,12 @@
+# Выполнено Занятие (monitoring-2)
+
+## gekl_microservices [![Build Status](https://travis-ci.com/Otus-DevOps-2019-08/gekl_microservices.svg?branch=monitoring-2)](https://travis-ci.com/Otus-DevOps-2019-08/gekl_microservices.svg?branch=monitoring-2)
+
+
+Выполнены основнные пункты ДЗ:
+  Push контейнеры в docker hub https://hub.docker.com/u/gklepach/
+
+
 # Выполнено Занятие (monitoring-1)
 
 ## gekl_microservices [![Build Status](https://travis-ci.com/Otus-DevOps-2019-08/gekl_microservices.svg?branch=monitoring-1)](https://travis-ci.com/Otus-DevOps-2019-08/gekl_microservices.svg?branch=monitoring-1)
