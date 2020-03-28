@@ -1,10 +1,15 @@
-FROM ruby:2.3-alpine
+FROM ruby:2.7.0-alpine3.11
+
+#RUN apk add --update alpine-sdk \
+#&&
+RUN gem install bundler 
 
 ENV APP_HOME /app
-RUN mkdir $APP_HOME && apk update && apk add build-base && rm -rf /var/cache/apk/* && gem install bundler --no-document
+RUN mkdir $APP_HOME
 
 WORKDIR $APP_HOME
 ADD Gemfile* $APP_HOME/
+RUN bundle update --bundler
 RUN bundle install
 ADD . $APP_HOME
 
