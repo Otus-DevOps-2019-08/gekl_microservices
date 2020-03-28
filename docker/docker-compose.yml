@@ -1,49 +1,63 @@
-version: '3.3'
+version: '3.0'
 services:
   post_db:
     image: mongo:${MONGO_VERSION}
     volumes:
       - post_db:/data/db
     networks:
-      - reddit
+      reddit_back:
+        aliases:
+          - post_db
+          - comment_db
   ui:
-#    build: ./ui
     image: ${USERNAME}/ui:${UI_VERSION}
+    environment:
+      - ZIPKIN_ENABLED=${ZIPKIN_ENABLED}
+      - POST_SERVICE_HOST=post
+      - POST_SERVICE_PORT=5000
+      - COMMENT_SERVICE_HOST=comment
+      - COMMENT_SERVICE_PORT=9292
     ports:
-      - ${UI_PORT}:${REDDIT_PORT}/tcp
+      - ${UI_PORT}:9292/tcp
+    logging:
+      driver: "fluentd"
+      options:
+         fluentd-address: localhost:24224
+         tag: service.ui
     networks:
       - ui
+
   post:
-#    build: ./post-py
     image: ${USERNAME}/post:${POST_VERSION}
+    environment:
+      - ZIPKIN_ENABLED=${ZIPKIN_ENABLED}
+      - POST_DATABASE_HOST=post_db
+      - POST_DATABASE=posts
+    depends_on:
+      - post_db
+    ports:
+      - "5000:5000"
+    logging:
+      driver: "fluentd"
+      options:
+        fluentd-address: localhost:24224
+        tag: service.post
     networks:
-      - reddit
-      - ui
+      - reddit_back
+      - reddit_front
   comment:
-#    build: ./comment
     image: ${USERNAME}/comment:${COMMENT_VERSION}
     networks:
-      - reddit
-      - ui
-
-  prometheus:
-    image: ${USERNAME}/prometheus
-    ports:
-      - '9090:9090'
-    volumes:
-      - prometheus_data:/prometheus
-    command:
-      - '--config.file=/etc/prometheus/prometheus.yml'
-      - '--storage.tsdb.path=/prometheus'
-      - '--storage.tsdb.retention=1d'
-    networks:
-      - reddit
-      - ui
+      - reddit_back
+      - reddit_front
 
 volumes:
-  prometheus_data:
   post_db:
 
 networks:
-  reddit:
-  ui:
+  reddit_front:
+    name: reddit_front_net
+    driver: bridge
+  reddit_back:
+    name: reddit_back_net
+    driver: bridge
