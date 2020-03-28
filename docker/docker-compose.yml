@@ -25,7 +25,7 @@ services:
          fluentd-address: localhost:24224
          tag: service.ui
     networks:
-      - ui
+      - reddit_front
 
   post:
     image: ${USERNAME}/post:${POST_VERSION}
@@ -54,10 +54,7 @@ services:
 volumes:
   post_db:
 
+
 networks:
   reddit_front:
-    name: reddit_front_net
-    driver: bridge
   reddit_back:
-    name: reddit_back_net
-    driver: bridge
