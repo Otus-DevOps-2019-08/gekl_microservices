@@ -63,4 +63,3 @@ networks:
   reddit_back:
     name: reddit_back_net
     driver: bridge
-
