@@ -1,3 +1,14 @@
+# Выполнено Занятие (logging-1)
+
+## gekl_microservices [![Build Status](https://travis-ci.com/Otus-DevOps-2019-08/gekl_microservices.svg?branch=monitoring-2)](https://travis$
+
+
+Выполнены основнные пункты ДЗ:
+  Сбор не структурированных логов
+  Визуализация логов
+  Сбор структурированных логов
+  Распределенная трасировка
+
 # Выполнено Занятие (monitoring-2)
 
 ## gekl_microservices [![Build Status](https://travis-ci.com/Otus-DevOps-2019-08/gekl_microservices.svg?branch=monitoring-2)](https://travis-ci.com/Otus-DevOps-2019-08/gekl_microservices.svg?branch=monitoring-2)
