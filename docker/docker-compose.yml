@@ -27,7 +27,7 @@ services:
          fluentd-address: localhost:24224
          tag: service.ui
     networks:
-      - reddit_front
+      - ui
 
   post:
     image: ${USERNAME}/post:${POST_VERSION}
